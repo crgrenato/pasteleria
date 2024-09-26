@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  pull-requests: read # allows SonarCloud to decorate PRs with analysis results
+  pull-requests: read  # allows SonarCloud to decorate PRs with analysis results
 
 jobs:
   Analysis:
@@ -25,11 +25,11 @@ jobs:
           java-version: '11'
 
       - name: Analyze with SonarCloud
-        uses: SonarSource/sonarcloud-github-action@4006f663ecaf1f8093e8e4abb9227f6041f52216
+        uses: SonarSource/sonarcloud-github-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}   # Token almacenado en los secretos del repositorio
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args:
-            -Dsonar.projectKey=nombre_del_proyecto   # Reemplaza con tu clave de proyecto
-            -Dsonar.organization=nombre_de_la_organización   # Reemplaza con tu clave de organización
-          projectBaseDir: .  # Directorio del proyecto base, si es necesario cambiarlo
+            -Dsonar.projectKey=nombre_del_proyecto
+            -Dsonar.organization=nombre_de_la_organización
+          projectBaseDir: .  # Cambia si tu proyecto está en otra carpeta
