@@ -30,6 +30,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
           args:
-            -Dsonar.projectKey=nombre_del_proyecto
-            -Dsonar.organization=nombre_de_la_organización
-          projectBaseDir: .  # Cambia si tu proyecto está en otra carpeta
+            -Dsonar.projectKey=pasteleria
+            -Dsonar.organization=christian-renato-gomez
+            -Dsonar.verbose=true  # Habilitar el modo detallado para más información
